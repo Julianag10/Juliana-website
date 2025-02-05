@@ -1,0 +1,540 @@
+/* Reset default browser styling
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/* ========== COLOR PALETTE ========== */
+:root {
+    --primary-color: #D4E6B5; /* Main theme color  */
+    --primary-darker: #b5c49c;
+    --secondary-color: #184027;
+    --accent-color: #e25b39;
+    --neon-color: #F4F383;
+ 
+
+    --background-color: #d4e6b5; 
+    --header-orange: #ff5733;
+    --text-color: #184027; /* Default text color */
+    /* --nav-bg-color: #333; Navigation bar background */
+    --hover-color: #ff5733; /* Hover effect color */
+    --footer-bg-color: #222; /* Footer background */
+
+    /* Newly Added Colors */
+    --light-beige: #F4F2EA; 
+    --soft-blue: #DFEFFF; 
+}
+
+/*============================== GLOBAL STLYES ==============================*/
+/* General Styles */
+body {
+    font-family: 'Bitter', serif; /* Default font for body */
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    background-color: #D4E6B5; /* Light gray background */
+    color: #184027; /* Dark gray text */
+    line-height: 1.6;
+    
+}
+/* Apply Young Serif to headings */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--header-color);
+    font-family: 'Young Serif', serif;
+}
+
+/* ============Nav bar ==============================*/
+nav {
+    /* background-color: var(--primary-darker);  */
+    background-color: var(--accent-color);
+    width: 100vw; /* Ensure it spans the full viewport width */
+    /* color: white; */
+    padding: 5px 0;
+    position: fixed; /* Fix it to the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+nav ul {
+    list-style-type: none;
+    /* margin: 0; */
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+nav ul li {
+    /* display: inline; */
+    /* padding: 10px 15px; */
+    padding: 0px 10px;
+}
+
+/* Navigation Links */
+nav ul li a {
+    /*  color: #184027;*/
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 0px 15px;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+    font-family: 'Bitter', serif; /* Apply Bitter to nav links */
+    /* font-weight: bold; */
+}
+
+/* Ensure nav stays flexbox */
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spreads items evenly */
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Style for Name in Navigation Bar */
+.nav-name h1{
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--primary-color); /* Use primary color */
+    /* font-family: 'Y', serif; */
+    margin-right: auto; /* Pushes everything else to the right */
+    /* padding: 10px 20px; */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Darker background on hover */
+    border-radius: 5px;
+}
+
+
+/* ==================== SVG Icon Color ====================*/
+/* Push user icon to the right */
+nav ul li.icon {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Container for the icon */
+.icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;  /* Circle size */
+    height: 50px; /* Circle size */
+    border-radius: 50%; /* Makes it a circle */
+    background-color: var(--background-color); /* Background color for the circle */
+    /* position: relative; */
+    overflow: visible; /* Prevents cutting off the icon */
+    /* padding: 5px; Adds space around the icon */
+    margin-right: 30px;
+} 
+
+
+/* Style for the SVG */
+.icon-svg {
+    width: 80%; /* Scale icon size dynamically */
+    height: 80%;
+    fill: var(--secondary-color);    
+    /* fill: var(--secondary-color); */
+    display: block; /* Ensure it renders correctly */
+        
+}
+
+
+/* Ensure the nav bar is visible */
+header {
+    width: 100%;
+    position: relative;
+}
+
+/* ========== PAGE-SPECIFIC STYLES ========== */
+/* Main Section Styles */
+/* 
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.intro img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    border: 3px solid #333; 
+}
+
+.intro .description {
+    max-width: 600px;
+}
+
+.intro h2 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+}
+
+.intro p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.resume-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.resume-link:hover {
+    background-color: #0056b3;
+}
+/*
+
+/* HOME PAGE */
+body.home-page {
+    background-color: #D4E6B5; /* Dark Blue */
+    text-align: center;
+    padding: 80px;
+}
+
+.home-page .intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.home-page .intro img {
+    max-width: 200px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+/* Ensure Description Text Appears in Paragraph Form */
+.home-page .description {
+    max-width: 600px; /* Keeps content readable */
+    text-align: left; /* Aligns text properly */
+    margin: 0 auto; /* Centers the description box */
+}
+
+/* Style for Paragraphs Inside the Description */
+.home-page .description p {
+    font-size: 18px;
+    line-height: 1.6; /* Adds spacing between lines */
+    color: var(--text-color); /* Uses theme text color */
+    margin-bottom: 10px; /* Adds space between paragraphs */
+}
+
+
+/* Positioning the Image Container */
+.image-container {
+    position: relative;
+    display: inline-block; /* Prevents unnecessary stretching */
+}
+
+/* Style the Image */
+.overlay-image {
+    width: 100%; /* Make image responsive */
+    height: auto;
+    display: block; /* Remove extra space below */
+}
+
+/* Position and Style the Button */
+.image-button {
+    position: absolute;
+    top: 50%; /* Moves button down */
+    left: 50%; /* Moves button to center */
+    transform: translate(-50%, -50%); /* Perfectly centers the button */
+    background-color: var(--accent-color); /* Use your theme color */
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 5px solid var(--neon-color); /* Outlined border */
+    border-radius: 5px;
+    text-decoration: none; /* Remove default underline */
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.image-button:hover {
+    background-color: var(--hover-color); /* Darker on hover */
+}
+
+
+
+/* HOBBIES PAGE */
+body.hobbies-page {
+    background-color: var(--background-color); /* Dark Grey */
+    text-align: center;
+    padding: 20px;
+    padding-top: 80px;
+}
+
+/* Style for Card Container */
+.hobbies-page  .card-container {
+    display: flex; /* Enables horizontal layout */
+    justify-content: center; /* Centers cards */
+    gap: 20px; /* Adds space between cards */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    margin: 40px auto; /* Centers the container */
+    max-width: 1200px; /* Ensures a good width */
+}
+
+/* Style for Individual Cards */
+.hobbies-page  .card {
+    background-color: var(--light-beige);
+    border-radius: 15px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    width: 300px; /* Sets a fixed width */
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* Card Image */
+.hobbies-page .card img {
+    width: 100%; /* Makes image fit card */
+    height: 180px; /* Set uniform height */
+    object-fit: cover; /* Ensures image is fully visible */
+    border-radius: 10px;
+}
+
+/* Card Title */
+.hobbies-page  .card h3 {
+    font-size: 22px;
+    color: var(--secondary-color);
+    margin-top: 15px;
+    font-family: 'Young Serif', serif;
+}
+
+/* Card Description */
+.hobbies-page  .card p {
+    font-size: 16px;
+    color: var(--text-color);
+    font-family: 'Bitter', serif;
+    padding: 10px;
+}
+
+
+
+/* PROJECTS PAGE */
+body.projects-page {
+    background-color: #34495e; /* Darker Blue */
+    text-align: center;
+    padding: 20px;
+}
+
+.projects-page h2 {
+    color: #f39c12; /* Orange */
+}
+
+ /* Project Section Layout */
+.project-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+/* Individual Project Card */
+.project-card {
+    background-color: var(--light-beige);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px; /* Adjust for uniformity */
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* Project Images */
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Project Titles */
+.project-card h3 {
+    font-size: 22px;
+    color: var(--secondary-color);
+    margin-top: 15px;
+    font-family: 'Young Serif', serif;
+}
+
+/* Project Descriptions */
+.project-card p {
+    font-size: 16px;
+    color: var(--text-color);
+    font-family: 'Bitter', serif;
+    padding: 10px;
+}
+
+
+
+
+/* RESUME PAGE */
+body.resume-page {
+    background-color: var(--background-color); /* Dark background */
+    text-align: center;
+    padding: 40px;
+}
+
+.resume-page h2 {
+    color: var(--accent-color); /* Green */
+}
+
+/* Resume Page Container */
+.resume-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--light-beige);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center all text */
+
+}
+
+/* Resume Sections */
+.resume-section {
+    /* margin-bottom: 20px; */
+    text-align: center ;
+    /* padding-left: 0; */
+}
+
+.resume-section h3 {
+    font-size: 22px;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.resume-section p, .resume-section ul {
+    font-size: 16px;
+    color: var(--text-color);
+    text-align: center; /* Center all paragraph text */
+    margin: 0 auto;
+    /* padding-left: 0; */
+}
+
+.resume-section ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+
+
+/* Resume Download Button */
+.resume-download {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.resume-button {
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.resume-button:hover {
+    background-color: var(--hover-color);
+}
+
+
+
+/* ==================== Footer Styles ==================== */
+/* Footer Styling */
+footer {
+    background-color:var(--accent-color); /* Dark footer background */
+    color: white;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding-top: 60px; /* Ensure content doesn’t overlap the wave */
+}
+
+ 
+
+/* Footer Content Layout */
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+/* Name on the Far Left */
+.footer-name h1{
+    font-size: 30px;
+    color: var(--light-beige) ;
+    font-weight: bold;
+    font-family: 'Young Serif', serif;
+    margin-left: 20px;
+}
+
+/* Centered Footer Text
+footer p {
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+} */
+
+/* Connect Section on the Far Right */
+.footer-connect {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 20px;
+}
+
+/* Style Connect Links */
+.footer-connect h1 {
+    font-size: 26px;
+    color: var(--light-beige);
+    margin-bottom: 25px;
+}
+
+.footer-connect a {
+    color: white;
+    font-family: 'Bitter', serif;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s ease-in-out;
+    margin-top: 5px;
+}
+
+.footer-connect a:hover {
+    color: var(--hover-color);
+}
